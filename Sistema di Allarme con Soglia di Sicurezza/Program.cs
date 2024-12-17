@@ -37,6 +37,48 @@ namespace Sistema_di_Allarme_con_Soglia_di_Sicurezza
         {
             CSerbatoio serb = new CSerbatoio();
             serb.SogliaSuperata += SerbatoioPieno;
+
+            while (true)
+            {
+                Console.WriteLine("1. Aggiungi  n litri\t2. Rimuovi n litri \t3. Esci");
+
+                string input = Console.ReadLine();
+
+                if(input == "1")
+                {
+                    Console.WriteLine("Litri da aggiungere: ");
+                    input = Console.ReadLine();
+
+                    if (double.TryParse(input, out var val))
+                    {
+                        Console.WriteLine(serb.AggiungiLitri(val));
+                    }
+                    else
+                    {
+                        Console.WriteLine("Errore di inserimento");
+                    }
+                }
+
+                if (input == "2")
+                {
+                    Console.WriteLine("Litri da rimuovere: ");
+                    input = Console.ReadLine();
+
+                    if (double.TryParse(input, out var val))
+                    {
+                        Console.WriteLine(serb.RimuoviLitri(val));
+                    }
+                    else
+                    {
+                        Console.WriteLine("Errore di inserimento");
+                    }
+                }
+
+                if (input == "3")
+                {
+                    break;
+                }
+            }
         }
 
         static void SerbatoioPieno()
