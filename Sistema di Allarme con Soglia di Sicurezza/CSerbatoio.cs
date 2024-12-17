@@ -36,7 +36,7 @@ namespace Sistema_di_Allarme_con_Soglia_di_Sicurezza
         private double Livello;
         private const double Soglia = 100.0;
 
-        private event SogliaSuperataHandler SogliaSuperata;
+        public event SogliaSuperataHandler SogliaSuperata;
 
         public CSerbatoio()
         {
